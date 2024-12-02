@@ -54,5 +54,35 @@ sum = 0
 for i in range(len(list1)):
     sum = sum + abs(list1[i] - list2[i])
 
-print(sum)
+print('sum:', sum)
+
+# i <- counter for the first list
+# j <- counter for the second list
+# score <- the similarity score of the lists
+# outofbounds <- bool to prevent oobe
+i = 0
+j = 0
+score = 0
+outofbounds = False
+
+# while we can still go through both of the lists
+while (not outofbounds):
+    # inc list1 if it's not in list2
+    while ((not outofbounds) and (list1[i] < list2[j])):
+        i += 1
+        if i >= len(list1):
+            outofbounds = True
+    # add repeated numbers to the total score
+    while  ((not outofbounds) and (list1[i] == list2[j])):
+        score += list2[j]
+        j += 1
+        if j >= len(list2):
+            outofbounds = True
+    # inc list2 if not in list1
+    while ((not outofbounds) and (list1[i] > list2[j])):
+        j += 1
+        if j >= len(list2):
+            outofbounds = True
+
+print("similarity score:", score)
     
