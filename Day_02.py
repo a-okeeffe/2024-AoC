@@ -2,6 +2,7 @@ with open('inputs/inpt_day02.txt') as file:
     lines = file.readlines()
 
 safe_list = [] # True is safe
+damp_list = [] # True is safe, tolerates 1 mistake
 for line in lines:
     # report <- a list of ints for each line
     report = list(map(int, line.split()))
@@ -9,6 +10,8 @@ for line in lines:
     prev = report[0]
     direction = 0
     safe = True
+    damp_safe = True
+    damped = 0
 
     # normalizing the positivity of the increment before the loop
     if report[0] < report[1]:
@@ -21,8 +24,16 @@ for line in lines:
         inc = (report[i] - report [i - 1]) * direction
         if (inc < 1) or (inc > 3):
             safe = False
-            break
+            # have to go through an extra step with the dampener
+            if damped == 1:
+                damp_safe = False
+                break
+            else:
+                damped = 1
     safe_list.append(safe)
+    damp_list.append(damp_safe)
 
-sum = sum(safe_list)
-print('there are', sum, 'safe reports')
+safe_sum = sum(safe_list)
+damp_sum = sum(damp_list)
+print('there are', safe_sum, 'safe reports')
+print('there are', damp_sum, 'safe reports with the Problem Dampener')
