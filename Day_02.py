@@ -1,4 +1,11 @@
-with open('inputs/inpt_day02.txt') as file:
+## STATS
+# P1 Time:  20:43:39
+# P1 Rank:  110939
+# P2 Time:  20:52:17
+# P2 Rank:  85238
+
+# given inputs are in input_day02.txt
+with open(r'inputs/inpt_day02.txt') as file:
     lines = file.readlines()
 
 safe_list = [] # True is safe

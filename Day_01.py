@@ -1,7 +1,13 @@
+## STATS
+# P1 Time:  >24h
+# P1 Rank:  145860
+# P2 Time:  >24h
+# P2 Rank:  140515
+
 # given inputs are in input_day01.txt
 import sys
 
-with open('inputs/inpt_day01.txt') as file:
+with open(r'inputs/inpt_day01.txt') as file:
     lines = file.readlines()
 
 # separate the text file into two lists
@@ -54,7 +60,7 @@ sum = 0
 for i in range(len(list1)):
     sum = sum + abs(list1[i] - list2[i])
 
-print('sum:', sum)
+print('sum: \t\t\t', sum)
 
 # i <- counter for the first list
 # j <- counter for the second list
@@ -84,5 +90,5 @@ while (not outofbounds):
         if j >= len(list2):
             outofbounds = True
 
-print("similarity score:", score)
+print('similarity score: \t', score)
     
