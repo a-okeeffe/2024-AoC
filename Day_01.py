@@ -18,12 +18,6 @@ for line in lines:
     list1.append(temp[0])
     list2.append(temp[1])
 
-# cmd inputs for debug
-# list1 = input("left list:").split()
-# list1 = list(map(int, list1))
-# list2 = input("right list:").split()
-# list2 = list(map(int, list2))
-
 # merge sort function: list -> sorted list
 def merge_sort(list):
     n = len(list)
@@ -48,7 +42,6 @@ def merge_sort(list):
         else:
             list[i] = right[rightn]
             rightn += 1
-
     return list
 
 # sort the two given lists

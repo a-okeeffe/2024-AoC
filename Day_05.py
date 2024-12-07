@@ -1,8 +1,8 @@
 ## STATS
-# P1 Time:  
-# P1 Rank:  
-# P2 Time:  
-# P2 Rank:  
+# P1 Time:  02:11:27
+# P1 Rank:  16870
+# P2 Time:  13:24:53
+# P2 Rank:  45250
 
 # given inputs are in input_day02.txt
 with open(r'inputs\inpt_day05.txt') as file:
@@ -35,18 +35,10 @@ def passes_rules(update):
             x = update.index(rule[0])
             y = update.index(rule[1])
             if (x >= y):
-                #print("x", rule[0], "x:", x, "y", rule[1], "y:", y)
                 newlist = update_list(newlist, newlist.index(rule[0]), newlist.index(rule[1]), rule[0], rule[1])
-                #print(update)
-                #print(rule)
-                #print(newlist)
-                #print("--------------")
                 bool = False
     if (not bool):
         reordered_pages.append(newlist)
-        print(newlist)
-        print(reordered_pages)
-        print(len(reordered_pages))
     return bool
 
 i = 0
@@ -57,8 +49,6 @@ for update in updates:
         # if the update passes, add the midpoint to our counter
         update_mids += update[int((len(update) - 1) / 2)]
         i += 1
-
-print(update_mids)
 
 
 for page in reordered_pages:
@@ -81,8 +71,3 @@ for item in reordered_pages:
     nonupdate_mids += item[int((len(item) - 1) / 2)]
 
 print(nonupdate_mids)
-
-## error handling notes:
-# we do have the right number of lists in reordered_pages,
-# so more likely than not it's the ordering of the list
-# that's failing
