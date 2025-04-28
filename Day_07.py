@@ -14,13 +14,23 @@ for line in lines:
     line[0] = line[0][:-1]
     equations.append(list(map(int, line)))
 
+def calc(vals, ops):
+    for i in range(len(vals) - 1):
+        if (ops[i] == 0):
+            vals[i + 1] = vals[i] + vals[i + 1]
+        if (ops[i] == 1):
+            vals[i + 1] = vals[i] + vals[i + 1]
+    return vals[-1]
+#for equation in equations:
+#    target = equation[0]
+#    units = equation[1:]
+#    ops = [0] * (len(units) - 1)
+#    nosol = True
+#    while nosol:
+#        for i in range(len(ops)):
+#
+#            if calc(units, ops) == target:
+#                nosol == False
 
-for equation in equations:
-    total = equation[0]
-    units = equation[1:]
-    print(units)
-    operation = ["{0:04b}".format(x) for x in range(2 ** (len(units) - 1))]
-    print(operation)
 
-    #for ops in range(len(operation)):
 

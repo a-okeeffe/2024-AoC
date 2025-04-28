@@ -35,6 +35,8 @@ for i in range(len(floorplan)):
 pos.append(floorplan[pos[0]].index(orient))
 floorplan[pos[0]][pos[1]] = 'X'
 
+
+# Below function is for PART 2
 def to_right(pos, pos_change):
 
     pc = [(pos_change[1]), (-1 * pos_change[0])]
@@ -81,10 +83,11 @@ while in_map:
             pos = [i, j]
             floorplan[i][j] = 'X'
             steps += 1
-            if(to_right(pos, pos_change)):
-                obs += 1
+            #if(to_right(pos, pos_change)):
+            #    obs += 1
 print(steps)
 
+# Part 1 correct answer is 4454
 
 # for i in range(2, len(obstruction_pos)):
 #     i0 = obstruction_pos[i][0]
